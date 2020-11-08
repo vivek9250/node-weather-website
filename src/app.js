@@ -8,7 +8,7 @@ const forecast=require('./utils/forecast');
 const publicdir = path.join(__dirname,'../public');
 const viewDir=path.join(__dirname,'../templates/views');
 const partialPath=path.join(__dirname,'../templates/partials');
-
+const port=process.env.PORT|| 3000;
 
 app.use(express.static(publicdir));
 
@@ -94,6 +94,6 @@ res.render('404',{
   name:'vivek sharma'
 });
 });
-app.listen(3000,()=>{
-console.log('server is running at port 3000');
+app.listen(port,()=>{
+console.log('server is running at port '+port+'');
 });
